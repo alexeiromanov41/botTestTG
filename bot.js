@@ -10,7 +10,7 @@ const bot = new Telegraf(token);
 
 bot.use(Telegraf.log());
 
-bot.command('help', async (ctx) => {
+bot.command('start', async (ctx) => {
 	return await ctx.reply(
 		'Меню бота',
 		Markup.keyboard([['Номера телефонов ОПР', 'Команды бота']])
@@ -37,7 +37,7 @@ bot.hears('Номера телефонов ОПР', (ctx) => {
 });
 
 bot.hears('Команды бота', (ctx) => {
-	ctx.reply('/help');
+	ctx.reply('/start');
 });
 
 bot.launch();
